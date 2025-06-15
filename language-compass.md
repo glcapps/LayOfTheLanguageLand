@@ -70,6 +70,7 @@ Below, you'll find an HTML-based chart embedded into this Markdown file for prec
     <div style="position: absolute; top: 90%; left: 10%; color: #000;">🟪 Scratch</div>
     <div style="position: absolute; top: 75%; left: 88%; color: #000;">🟦 ASP.NET</div>
     <div style="position: absolute; top: 78%; left: 65%; color: #000;">⚪ Django</div>
+    <div style="position: absolute; top: 28%; left: 42%; color: #000;">🔥 Mojo</div>
 
 </div>
 
