@@ -5,28 +5,30 @@ Navigating Code, Communication, Interviews, and Career Conversations
 
 ## 🧭 Purpose
 
-This project explores the evolving landscape of programming languages and the idioms they promote — not just in syntax, but in how they shape collaboration, learning curves, business conversations, and interviews. It aims to help developers and teams speak fluently across:
+This project explores the evolving terrain of programming languages — not just their syntax, but their implied workflows, idioms, and roles in team and business dynamics. It aims to decode how languages influence:
 
-- Framework paradigms (reactive, declarative, component-based, etc.)
-- Team communication styles and expectations
-- Interview terminology and ambiguity
-- Career narratives that span tooling choices
+- Collaboration habits and onboarding curves
+- Developer interview framing and career signals
+- Technical vs non-technical stakeholder conversations
+- Ecosystem expectations and unspoken assumptions
 
 ## 📚 Topics Covered
 
 - Slippery terms like “reactive,” “responsive,” “component,” and “state”
-- Comparing logic/data separation philosophies across tools
-- JSX, Web Components, templating languages
-- React vs HTMX vs Svelte vs Vue — who draws what boundary where?
-- Programming idioms as interview signals
-- What “modular,” “lightweight,” and “declarative” really mean
-- Making better career and architectural decisions through clarity
+- Logic/data separation philosophies in frameworks and languages
+- JSX, templating, and Web Components as boundary-setting technologies
+- When React, Vue, HTMX, or Svelte make sense — and for whom
+- Programming idioms as signals in hiring and collaboration
+- What “modular,” “lightweight,” “declarative,” or “scalable” really mean
+- Auxiliary languages and config syntaxes (SQL, Bash, Dockerfile, Terraform, etc.)
+- Building interactive maps of language roles and idioms
 
 ## 💡 Audience
 
 This repo is for:
 
-- Developers preparing for technical interviews
-- Engineers curious about shifting language paradigms
-- Teams building consensus around tech stacks
-- Anyone bridging the gap between technical depth and human communicati
+- Developers preparing for interviews or career pivots
+- Engineers evaluating language choices with long-term impact
+- Teams clarifying stack decisions and expectations
+- Technical educators or mentors translating between paradigms
+- Anyone trying to explain or defend their tooling to non-devs
