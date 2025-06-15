@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BearGaze Demo in Browser</title>
+    <title>Languages Demo in Browser</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='90' fill='black'>💾</text></svg>">
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +31,29 @@
             return JSON.rawJSON(this.toString());
         };
     </script>
+    <!-- Pyodide for Python -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
+    <!-- sql.js for SQLite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
+    <!-- TypeScript Compiler -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.4.3/typescript.min.js"></script>
+
+    <!-- Lua via Fengari -->
+    <script src="https://unpkg.com/fengari-web@0.1.4/dist/fengari-web.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/opal-runtime@3.0.0/src/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/biwascheme@0.8.0/release/biwascheme.min.js"></script>\
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/lib/core.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/an-old-hope.min.css" rel="stylesheet">
+
+    <!-- YAML support -->
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+
+</head>
+<body class="bg-gray-900 text-white p-6">
+
     <!-- Load Monaco separately to avoid exceptions breaking other functionality -->
     <script>
         (function() {
@@ -237,57 +260,58 @@
   </script>
 </head>
 <body class="bg-gray-900 text-white p-6">
-
-    <main class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <nav class="space-y-2 md:col-span-1">
-        <h2 class="text-xl font-semibold mb-2">Table of Contents</h2>
-        <ul class="space-y-1" x-data="{ articles: [
-            { file: 'SemanticGrounding.png', title: 'Semantic Grounding Cartoon' },
-            { file: 'language-vs-framework.md', title: 'What\'s the Real Developer Experience?' },
-            { file: 'language-compass.md', title: 'The Language Compass' },
-            { file: 'reactive.md', title: 'What Does Reactive Really Mean?' },
-            { file: 'responsive.md', title: 'Unpacking Responsive: Layout, Latency, and Reactivity' },
-            { file: 'slippery-terms.md', title: 'Slippery Terms in Tech' },
-            { file: 'component-vs-webcomponent.md', title: 'Component vs Web Component' },
-            { file: 'jsx-in-context.md', title: 'JSX in Context' },
-            { file: 'logic-and-markup-boundaries.md', title: 'Logic and Markup Boundaries' },
-            { file: 'framework-boundary-contracts.md', title: 'Framework Boundary Contracts' },
-            { file: 'declarative-vs-imperative.md', title: 'Declarative vs Imperative' },
-            { file: 'interview-vocabulary.md', title: 'Interview Vocabulary and Ambiguity' },
-            { file: 'programming-idioms-as-career-signals.md', title: 'Programming Idioms as Career Signals' },
-            { file: 'when-to-use-react.md', title: 'When to Use React (and When Not To)' },
-            { file: 'htmx-vs-react.md', title: 'HTMX vs React' },
-            { file: 'language-and-communication.md', title: 'Language and Communication' },
-            { file: 'business-language-translation.md', title: 'Translating Tech to Business Language' },
-            { file: 'misunderstood-performance.md', title: 'What Performance Really Means' },
-            { file: 'meaning-of-modular.md', title: 'The Meaning of Modular' },
-            { file: 'state-vs-state.md', title: 'State vs State' },
-            { file: 'mental-models-in-teams.md', title: 'Mental Models in Teams' },
-            { file: 'languages-often-learned-alongside.md', title: 'Languages Often Learned Alongside' }
-        ]}">
-            <template x-for="article in articles" :key="article.file">
-            <li>
-                <a :href="'#' + article.file.replace(/\.md$/, '')"
-                :hx-get="article.file"
-                hx-target="#content"
-                class="text-blue-600 hover:underline"
-                x-text="article.title">
-                </a>
-            </li>
-            </template>
-        </ul>
-        </nav>
-
-        <section id="content" class="prose prose-lg max-w-none md:col-span-3 bg-white text-black p-6 rounded shadow overflow-auto" x-data="{ fontSize: 'prose-lg' }" :class="fontSize">
-        <div></div>
-        </section>
-    </main>
     <div class="max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold mb-4">Navigating Code, Communication, Interviews, and Career Conversations</h1>
+        <main class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <nav class="space-y-2 md:col-span-1">
+            <h2 class="text-xl font-semibold mb-2">Table of Contents</h2>
+            <ul class="space-y-1" x-data="{ articles: [
+                { file: 'SemanticGrounding.png', title: 'Semantic Grounding Cartoon' },
+                { file: 'language-vs-framework.md', title: 'What\'s the Real Developer Experience?' },
+                { file: 'language-compass.md', title: 'The Language Compass' },
+                { file: 'reactive.md', title: 'What Does Reactive Really Mean?' },
+                { file: 'responsive.md', title: 'Unpacking Responsive: Layout, Latency, and Reactivity' },
+                { file: 'slippery-terms.md', title: 'Slippery Terms in Tech' },
+                { file: 'component-vs-webcomponent.md', title: 'Component vs Web Component' },
+                { file: 'jsx-in-context.md', title: 'JSX in Context' },
+                { file: 'logic-and-markup-boundaries.md', title: 'Logic and Markup Boundaries' },
+                { file: 'framework-boundary-contracts.md', title: 'Framework Boundary Contracts' },
+                { file: 'declarative-vs-imperative.md', title: 'Declarative vs Imperative' },
+                { file: 'interview-vocabulary.md', title: 'Interview Vocabulary and Ambiguity' },
+                { file: 'programming-idioms-as-career-signals.md', title: 'Programming Idioms as Career Signals' },
+                { file: 'when-to-use-react.md', title: 'When to Use React (and When Not To)' },
+                { file: 'htmx-vs-react.md', title: 'HTMX vs React' },
+                { file: 'language-and-communication.md', title: 'Language and Communication' },
+                { file: 'business-language-translation.md', title: 'Translating Tech to Business Language' },
+                { file: 'misunderstood-performance.md', title: 'What Performance Really Means' },
+                { file: 'meaning-of-modular.md', title: 'The Meaning of Modular' },
+                { file: 'state-vs-state.md', title: 'State vs State' },
+                { file: 'mental-models-in-teams.md', title: 'Mental Models in Teams' },
+                { file: 'llm-impact-on-code-and-systems.md', title: 'LLM Impact on Code and Systems' },
+                { file: 'languages-often-learned-alongside.md', title: 'Languages Often Learned Alongside' },
+                { file: 'database-types-and-models.md', title: 'Database Types and Models' }
+            ]}">
+                <template x-for="article in articles" :key="article.file">
+                <li>
+                    <a :href="'#' + article.file.replace(/\.md$/, '')"
+                    :hx-get="article.file"
+                    hx-target="#content"
+                    class="text-blue-600 hover:underline"
+                    x-text="article.title">
+                    </a>
+                </li>
+                </template>
+            </ul>
+            </nav>
+
+            <section id="content" class="prose prose-lg max-w-none md:col-span-3 bg-white text-black p-6 rounded shadow overflow-auto" x-data="{ fontSize: 'prose-lg' }" :class="fontSize">
+            <div></div>
+            </section>
+        </main>
         <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-6">
             <h2 class="text-lg font-semibold mb-2">SQL Data Query</h2>
             <div class="flex gap-2 mb-2">
-                <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded" onclick="prefillDuckDBQuery(0)">Sample Query Parquet</button>
+                <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded" onclick="prefillDuckDBQuery(0)">Sample Query</button>
             </div>
             <div id="duckdb-editor" class="h-40 border rounded bg-gray-700"></div>
             <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runDuckDBQuery()">Run Query</button>
@@ -353,9 +377,7 @@
     <script>
         function prefillDuckDBQuery(queryIndex) {
             const queries = [
-                `SELECT * 
-FROM '${window.location.origin}/blendMap.parquet'
-LIMIT 10;`
+                `SELECT 'Hello, World' AS "greeting";`
             ];
             if (window.duckDBEditor && queries[queryIndex]) {
                 window.duckDBEditor.setValue(queries[queryIndex]);
@@ -697,5 +719,167 @@ LIMIT 10;`
             }
         })();
     </script>
+
+<section id="python-playground" style="margin-top: 3em;">
+  <h2>🧪 Python Hello World</h2>
+  <button onclick="insertPythonExample()" style="margin-left: 10px;" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">Insert Example</button>
+  <div id="python-editor" style="height: 200px; border: 1px solid #ccc;"></div>
+  <div>
+    <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runPythonCode()">Run Python</button>
+  </div>
+  <pre id="python-output" style="margin-top: 10px; background: #1a3f15; padding: 1em;"></pre>
+  <div id="python-plot" style="margin-top: 1em;"></div>
+</section>
+
+<!-- Rust Playground Section -->
+<div id="rust-demo" class="language-section" style="margin-top: 3em;">
+  <h3>Rust Playground</h3>
+  <div id="rust-editor" style="height: 200px; border: 1px solid #ccc;"></div>
+  <div>
+    <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runRustCode()">Run Rust</button>
+  </div>
+  <pre id="rustOutput" style="margin-top: 10px; background: #2d2d2d; color: #ffb86c; padding: 1em;"></pre>
+</div>
+
+<h3>Terraform</h3>
+<div id="terraform-editor" style="height:300px; border:1px solid #ccc;"></div>
+<button onclick="runTerraformCode()">Run Terraform</button>
+<pre id="terraform-output"></pre>
+
+<script>
+  // Only create the Python Monaco editor after Monaco is loaded, and do not reload Monaco.
+  (function waitForMonacoPython() {
+    if (window.monacoLoaded && window.monaco && window.monaco.editor) {
+      window.pythonEditor = monaco.editor.create(document.getElementById('python-editor'), {
+        value: `print("Hello from Python")`,
+        language: 'python',
+        theme: 'vs-dark',
+        automaticLayout: true
+      });
+    } else {
+      setTimeout(waitForMonacoPython, 100);
+    }
+  })();
+
+  // Wait for Monaco to be loaded for Rust editor initialization
+  (function waitForMonacoRust() {
+    if (window.monacoLoaded && window.monaco && window.monaco.editor) {
+        window.rustEditor = monaco.editor.create(document.getElementById('rust-editor'), {
+        value: `fn main() {\n    println!("Hello from Rust!");\n}`,
+        language: 'rust',
+        theme: 'vs-dark',
+        automaticLayout: true
+      });
+    } else {
+      setTimeout(waitForMonacoRust, 100);
+    }
+  })();
+
+    (function waitForMonacoTerraform() {
+    if (window.monacoLoaded && window.monaco && window.monaco.editor) {
+        window.terraformEditor = monaco.editor.create(document.getElementById('terraform-editor'), {
+        value: `resource "null_resource" "example" {
+    provisioner "local-exec" {
+        command = "echo Hello from Terraform"
+    }
+    }`,
+        language: 'hcl',
+        theme: 'vs-dark',
+        automaticLayout: true
+        });
+    } else {
+        setTimeout(waitForMonacoTerraform, 100);
+    }
+    })();
+
+  async function runPythonCode() {
+    const pyodide = await loadPyodide();
+
+    // Clear previous outputs
+    document.getElementById("python-output").textContent = "";
+    document.getElementById("python-plot").innerHTML = "";
+
+    let outputBuffer = "";
+    pyodide.setStdout({ batched: (s) => outputBuffer += s });
+    pyodide.setStderr({ batched: (s) => outputBuffer += `\n[stderr] ${s}` });
+
+    const code = window.pythonEditor.getValue();
+
+    try {
+      // Load required packages
+      await pyodide.loadPackage(["pandas", "matplotlib"]);
+
+      await pyodide.runPythonAsync(code);
+      // Image extraction logic
+      const imgMatch = outputBuffer.match(/__IMG__(.*)/);
+      if (imgMatch) {
+        const base64 = imgMatch[1];
+        document.getElementById("python-plot").innerHTML = `<img src="data:image/png;base64,${base64}" />`;
+        document.getElementById("python-output").textContent = outputBuffer.replace(/__IMG__.*/, "").trim();
+      } else {
+        document.getElementById("python-output").textContent = outputBuffer || "(no output)";
+      }
+    } catch (e) {
+      document.getElementById("python-output").textContent = "Error: " + e;
+    }
+  }
+
+  function insertPythonExample() {
+    editor = window.pythonEditor;
+    editor.setValue(`import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    "Language": ["Python", "C++", "Java", "C", "C#", "JavaScript", "Go", "SQL", "Fortran", "PHP", "Objective-C"],
+    "2025": [1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 34],
+    "2020": [3, 4, 1, 2, 5, 7, 13, 9, 31, 8, 14],
+    "2015": [7, 4, 2, 1, 5, 8, 48, None, 31, 6, 3],
+    "2010": [7, 4, 1, 2, 6, 9, 184, None, 25, 3, 13],
+    "2005": [9, 3, 2, 1, 10, 11, None, None, 16, 5, 40],
+    "2000": [25, 2, 3, 1, 9, 6, None, None, 19, 26, None],
+    "1995": [22, 1, None, 2, None, None, None, None, 5, None, None],
+    "1990": [None, 3, None, 1, None, None, None, None, 2, None, None],
+    "1985": [None, 11, None, 1, None, None, None, None, 6, None, None]
+}
+
+df = pd.DataFrame(data)
+df_melted = df.melt(id_vars="Language", var_name="Year", value_name="Rank")
+df_melted.dropna(inplace=True)
+df_melted["Year"] = df_melted["Year"].astype(int)
+
+plt.figure(figsize=(10, 6))
+for lang in df["Language"]:
+    lang_data = df_melted[df_melted["Language"] == lang]
+    plt.plot(lang_data["Year"], lang_data["Rank"], label=lang)
+
+plt.gca().invert_yaxis()
+plt.title("TIOBE Language Rankings Over Time")
+plt.xlabel("Year")
+plt.ylabel("Rank (1 = Most Popular)")
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.grid(True)
+print("Showing Chart from Python")
+plt.show()
+`);
+  }
+
+  window.addEventListener("load", async () => {
+    window.pyodide = await loadPyodide();
+  });
+</script>
+<script>
+  // Placeholder for Rust code execution. v86 integration will be hooked up here.
+  async function runRustCode() {
+    const rustCode = window.rustEditor.getValue();
+    const rustOutputElement = document.getElementById('rustOutput');
+    rustOutputElement.textContent = "⏳ Compiling and running in browser (v86 integration coming soon)...\n";
+    // TODO: Integrate v86 to compile/run Rust code in-browser.
+  }
+  function runTerraformCode() {
+    const code = window.terraformEditor.getValue();
+    document.getElementById('terraform-output').textContent = "Terraform syntax only demo:\n\n" + code;
+  }
+</script>
 </body>
 </html>
