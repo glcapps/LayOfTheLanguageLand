@@ -1,5 +1,7 @@
 # LayOfTheLanguageLand
 
+🌐 [View on GitHub Pages](https://glcapps.github.io/LayOfTheLanguageLand/)
+
 🎓 Languages, Layers, and Leverage  
 Navigating Code, Communication, Interviews, and Career Conversations
 
@@ -32,3 +34,4 @@ This repo is for:
 - Teams clarifying stack decisions and expectations
 - Technical educators or mentors translating between paradigms
 - Anyone trying to explain or defend their tooling to non-devs
+
