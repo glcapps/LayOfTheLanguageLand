@@ -159,9 +159,9 @@
     </script>
     <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Load article from hash if present on page load, or default to SemanticGrounding.png
+      // Load article from hash if present on page load, or default to webstack-cartoon.png
       const initialHash = window.location.hash.slice(1);
-      let articlePath = initialHash || "SemanticGrounding.png";
+      let articlePath = initialHash || "webstack-cartoon.png";
       if (!/\.(png|jpg|jpeg|gif|webp)$/i.test(articlePath)) {
         articlePath += ".md";
       }
@@ -181,8 +181,8 @@
       htmx.on("htmx:afterSwap", (e) => {
         if (e.detail.target.id === "content") {
           const url = e.detail.xhr.responseURL || "";
-          if (!window.location.hash || url.endsWith("SemanticGrounding.png")) {
-            const image = `<img src="SemanticGrounding.png" alt="Semantic Grounding Cartoon" class="mx-auto my-6 rounded shadow" style="max-height: 100vh; max-width: 100vw;" />`;
+          if (!window.location.hash || url.endsWith("webstack-cartoon.png")) {
+            const image = `<img src="webstack-cartoon.png" alt="WebStack Cartoon" class="mx-auto my-6 rounded shadow" style="max-height: 100vh; max-width: 100vw;" />`;
             document.getElementById("content").innerHTML = image;
             return;
           }
@@ -265,7 +265,7 @@
             <nav class="space-y-2 md:col-span-1">
             <h2 class="text-xl font-semibold mb-2">Table of Contents</h2>
             <ul class="space-y-1" x-data="{ articles: [
-                { file: 'SemanticGrounding.png', title: 'Semantic Grounding Cartoon' },
+                { file: 'webstack-cartoon.png', title: 'WebStack Cartoon' },
                 { file: 'language-vs-framework.md', title: 'What\'s the Real Developer Experience?' },
                 { file: 'language-compass.md', title: 'The Language Compass' },
                 { file: 'reactive.md', title: 'What Does Reactive Really Mean?' },
