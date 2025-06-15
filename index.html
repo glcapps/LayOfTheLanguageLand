@@ -259,7 +259,6 @@
     });
   </script>
 </head>
-<body class="bg-gray-900 text-white p-6">
     <div class="max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold mb-4">Navigating Code, Communication, Interviews, and Career Conversations</h1>
         <main class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -311,6 +310,7 @@
             <div></div>
             </section>
         </main>
+        <br/>
         <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-6">
             <h2 class="text-lg font-semibold mb-2">SQL Data Query</h2>
             <div class="flex gap-2 mb-2">
@@ -343,6 +343,33 @@
                 </div>
             </div>
         </div>
+
+        <section id="python-playground" style="margin-top: 3em;">
+            <h2>🧪 Python Hello World</h2>
+            <button onclick="insertPythonExample()" style="margin-left: 10px;" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">Insert Example</button>
+            <div id="python-editor" style="height: 200px; border: 1px solid #ccc;"></div>
+            <div>
+                <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runPythonCode()">Run Python</button>
+            </div>
+            <pre id="python-output" style="margin-top: 10px; background: #1a3f15; padding: 1em;"></pre>
+            <div id="python-plot" style="margin-top: 1em;"></div>
+        </section>
+
+        <section id="rust-demo" class="language-section" style="margin-top: 3em;">
+            <h3>Rust Playground</h3>
+            <div id="rust-editor" style="height: 200px; border: 1px solid #ccc;"></div>
+            <div>
+                <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runRustCode()">Run Rust</button>
+            </div>
+            <pre id="rustOutput" style="margin-top: 10px; background: #1a3f15; padding: 1em;"></pre>
+        </section>
+
+        <section id="terraform-demo" class="language-section" style="margin-top: 3em;">
+            <h3>Terraform</h3>
+            <div id="terraform-editor" style="height:300px; border:1px solid #ccc;"></div>
+            <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runTerraformCode()">Run Terraform</button>
+            <pre id="terraform-output" style="margin-top: 10px; background: #1a3f15; padding: 1em;"></pre>
+        </section>
     </div> 
 
     <script>
@@ -722,32 +749,6 @@
             }
         })();
     </script>
-
-<section id="python-playground" style="margin-top: 3em;">
-  <h2>🧪 Python Hello World</h2>
-  <button onclick="insertPythonExample()" style="margin-left: 10px;" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">Insert Example</button>
-  <div id="python-editor" style="height: 200px; border: 1px solid #ccc;"></div>
-  <div>
-    <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runPythonCode()">Run Python</button>
-  </div>
-  <pre id="python-output" style="margin-top: 10px; background: #1a3f15; padding: 1em;"></pre>
-  <div id="python-plot" style="margin-top: 1em;"></div>
-</section>
-
-<!-- Rust Playground Section -->
-<div id="rust-demo" class="language-section" style="margin-top: 3em;">
-  <h3>Rust Playground</h3>
-  <div id="rust-editor" style="height: 200px; border: 1px solid #ccc;"></div>
-  <div>
-    <button class="mt-2 bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded" onclick="runRustCode()">Run Rust</button>
-  </div>
-  <pre id="rustOutput" style="margin-top: 10px; background: #2d2d2d; color: #ffb86c; padding: 1em;"></pre>
-</div>
-
-<h3>Terraform</h3>
-<div id="terraform-editor" style="height:300px; border:1px solid #ccc;"></div>
-<button onclick="runTerraformCode()">Run Terraform</button>
-<pre id="terraform-output"></pre>
 
 <script>
   // Only create the Python Monaco editor after Monaco is loaded, and do not reload Monaco.
